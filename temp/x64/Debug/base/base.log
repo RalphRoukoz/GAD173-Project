@@ -1,17 +1,1 @@
-﻿  app.cpp
-  dependencies.cpp
-  example.cpp
-  main.cpp
-C:\Users\PC\Desktop\Rouk\GAD\Kage2D\projects\base\app.cpp(43,24): warning C4100: 'deltaT': unreferenced formal parameter
-C:\Users\PC\Desktop\Rouk\GAD\Kage2D\projects\base\example.cpp(27,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\PC\Desktop\Rouk\GAD\Kage2D\projects\base\example.cpp(34,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\PC\Desktop\Rouk\GAD\Kage2D\projects\base\example.cpp(40,28): warning C4100: 'deltaT': unreferenced formal parameter
-  base.vcxproj -> C:\Users\PC\Desktop\Rouk\GAD\Kage2D\bin\base_d.exe
+﻿  base.vcxproj -> C:\Users\PC\GAD173-Project\bin\base_d.exe
