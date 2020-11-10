@@ -1,47 +1,66 @@
 ﻿  example.cpp
-  main.cpp
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(38,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(42,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(45,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(49,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(60,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(63,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(77,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(65,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(68,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(89,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(77,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(89,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(89,68): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(101,69): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(89,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(101,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(99,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(113,69): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(99,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(113,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(51,28): warning C4100: 'deltaT': unreferenced formal parameter
-C:\Users\PC\Desktop\Test\GAD173-Project\projects\base\example.cpp(58,6): warning C4189: 'w': local variable is initialized but not referenced
-  base.vcxproj -> C:\Users\PC\Desktop\Test\GAD173-Project\bin\base_d.exe
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(125,68): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(125,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(135,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(135,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(56,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\projects\base\example.cpp(63,6): warning C4189: 'w': local variable is initialized but not referenced
+  base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\bin\base_d.exe

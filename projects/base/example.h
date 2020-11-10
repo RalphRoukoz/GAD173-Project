@@ -2,6 +2,10 @@
 
 #include "app.h"
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <string>
+
 #define LineThickness 2
 
 #define CellHeight 90
@@ -28,10 +32,14 @@ public:
 	static Example &inst();
 		
 	sf::Sprite *m_backgroundSprite;
+	
 
 	sf::Texture* RedTile;
 	sf::Texture* BlueTile;
 	sf::Texture* GreenTile;
+	sf::Texture* OrangeTile;
+	sf::Texture* YellowTile;
+
 
 	sf::RectangleShape lineHor[TotalCellsY];		
 	sf::RectangleShape lineVer[TotalCellsX];	
@@ -42,5 +50,9 @@ public:
 	bool RedisActive;
 	bool GreenisActive;
 	bool BlueisActive;
+	bool YellowisActive;
+	bool OrangeisActive;
+	bool Undo;
+	bool Clear;
 	
 };

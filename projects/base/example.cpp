@@ -19,12 +19,16 @@ bool Example::start()
 	RedisActive = false;
 	GreenisActive = false;
 	BlueisActive = false;
+	YellowisActive = false;
+	OrangeisActive = false;
 
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 
 	RedTile = kage::TextureManager::getTexture("data/RedTile.png");
 	BlueTile = kage::TextureManager::getTexture("data/BlueTile.png");
 	GreenTile = kage::TextureManager::getTexture("data/GreenTile.png");
+	YellowTile = kage::TextureManager::getTexture("data/YellowTile.png");
+	OrangeTile = kage::TextureManager::getTexture("data/OrangeTile.png");
 
 
 
@@ -44,6 +48,7 @@ bool Example::start()
 		lineHor[i].setFillColor(sf::Color::White);
 		lineHor[i].setPosition(sf::Vector2f(GridOffSetX, CellHeight * i + GridOffSetY));		
 	}
+	
 	
 	return true;
 }
@@ -66,6 +71,13 @@ void Example::update(float deltaT)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
 	{
 		m_running = false;
+
+	}
+	if (Clear == true)
+	{	
+		
+		sprites.clear();
+		Clear = false;
 	}
 	
 	if (RedisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
@@ -77,8 +89,32 @@ void Example::update(float deltaT)
 			Red.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
 			sprites.push_back(Red);
 			render();
-
 		}
+		
+	}
+	if (YellowisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+
+		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
+		{
+			sf::Sprite Yellow;
+			Yellow.setTexture(*YellowTile);
+			Yellow.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
+			sprites.push_back(Yellow);
+			render();
+		}
+
+	}
+	if (OrangeisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+
+		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
+		{
+			sf::Sprite Orange;
+			Orange.setTexture(*OrangeTile);
+			Orange.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
+			sprites.push_back(Orange);
+			render();
+		}
+
 	}
 	if (GreenisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {		
 
@@ -101,45 +137,67 @@ void Example::update(float deltaT)
 			render();
 		}
 	}
+		
+		
+	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile"};
+	static int selectedTile = 0;
 
 	ImGui::Begin("Game Editor");
-	if(ImGui::Button("Exit"))
-	{ 
-		m_running = false;
-	}
-	if (ImGui::Button ("RedTile"))
+	
+	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
+
+	if (selectedTile == 0)
 	{
 		RedisActive = true;
 		GreenisActive = false;
 		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = false;
 		
 	}
-	if (ImGui::Button("GreenTile"))
+	if (selectedTile == 1)
 	{
-	
-		RedisActive = false;
-		GreenisActive = true;
-		BlueisActive = false;
-	}
-	if (ImGui::Button("BlueTile"))
-	{
-		
 		RedisActive = false;
 		GreenisActive = false;
 		BlueisActive = true;
+		OrangeisActive = false;
+		YellowisActive = false;
 	}
-	if (ImGui::Button("Exit"))
+	if (selectedTile == 2)
 	{
+		RedisActive = false;
+		GreenisActive = true;
+		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = false;
+	}
+	if (selectedTile == 3)
+	{
+		RedisActive = false;
+		GreenisActive = false;
+		BlueisActive = false;
+		OrangeisActive = true;
+		YellowisActive = false;
+	}
+	if (selectedTile == 4)
+	{
+		RedisActive = false;
+		GreenisActive = false;
+		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = true;
+	}
+
+	
+	if (ImGui::Button("Clear Tiles"))
+	{
+		Clear = true;
+	}
+	if(ImGui::Button("Exit"))
+	{ 
 		m_running = false;
 	}
-	if (ImGui::Button("Save"))
-	{
-		m_running = false;
-	}
-	if (ImGui::Button("Load"))
-	{
-		m_running = false;
-	}
+	
 	ImGui::End();
 }
 
