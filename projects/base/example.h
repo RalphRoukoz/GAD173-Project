@@ -37,7 +37,7 @@ public:
 	sf::RectangleShape lineVer[TotalCellsX];	
 
 	std::vector<sf::Sprite> sprites;
-	int test;
+	
 
 	bool RedisActive;
 	bool GreenisActive;
