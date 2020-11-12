@@ -30,25 +30,10 @@ bool Example::start()
 	YellowTile = kage::TextureManager::getTexture("data/YellowTile.png");
 	OrangeTile = kage::TextureManager::getTexture("data/OrangeTile.png");
 
-
-
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 	
-	for (int i = 0; i < TotalCellsX ; i++)
-	{			
-		lineVer[i] = sf::RectangleShape(sf::Vector2f(LineThickness, CellHeight * TotalCellsY)); //Size of the cell
-		lineVer[i].setFillColor(sf::Color::White);
-		lineVer[i].setPosition(sf::Vector2f(GridOffSetX + CellWidth * i, GridOffSetY));					//Position of the cell
-	}
-
-	for (int i = 0; i < TotalCellsY ; i++)
-	{					
-		lineHor[i] = sf::RectangleShape(sf::Vector2f(CellWidth * TotalCellsX, LineThickness));
-		lineHor[i].setFillColor(sf::Color::White);
-		lineHor[i].setPosition(sf::Vector2f(GridOffSetX, CellHeight * i + GridOffSetY));		
-	}
-	
+	Grid();
 	
 	return true;
 }
@@ -61,6 +46,8 @@ void Example::update(float deltaT)
 	int newindexX;
 	int newindexY;
 	int w = 6;
+	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile" };
+	static int selectedTile = 0;
 
 	indexX = mousePosition.x / 270;
 	newindexX = (int)indexX;
@@ -73,6 +60,64 @@ void Example::update(float deltaT)
 		m_running = false;
 
 	}
+
+	ImGui::Begin("Game Editor");
+
+	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
+
+	if (selectedTile == 0)
+	{
+		RedisActive = true;
+		GreenisActive = false;
+		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = false;
+
+	}
+	if (selectedTile == 1)
+	{
+		RedisActive = false;
+		GreenisActive = false;
+		BlueisActive = true;
+		OrangeisActive = false;
+		YellowisActive = false;
+	}
+	if (selectedTile == 2)
+	{
+		RedisActive = false;
+		GreenisActive = true;
+		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = false;
+	}
+	if (selectedTile == 3)
+	{
+		RedisActive = false;
+		GreenisActive = false;
+		BlueisActive = false;
+		OrangeisActive = true;
+		YellowisActive = false;
+	}
+	if (selectedTile == 4)
+	{
+		RedisActive = false;
+		GreenisActive = false;
+		BlueisActive = false;
+		OrangeisActive = false;
+		YellowisActive = true;
+	}
+
+
+	if (ImGui::Button("Clear Tiles"))
+	{
+		Clear = true;
+	}
+	if (ImGui::Button("Exit"))
+	{
+		m_running = false;
+	}
+
+	ImGui::End();
 	if (Clear == true)
 	{	
 		
@@ -139,66 +184,6 @@ void Example::update(float deltaT)
 	}
 		
 		
-	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile"};
-	static int selectedTile = 0;
-
-	ImGui::Begin("Game Editor");
-	
-	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
-
-	if (selectedTile == 0)
-	{
-		RedisActive = true;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = false;
-		
-	}
-	if (selectedTile == 1)
-	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = true;
-		OrangeisActive = false;
-		YellowisActive = false;
-	}
-	if (selectedTile == 2)
-	{
-		RedisActive = false;
-		GreenisActive = true;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = false;
-	}
-	if (selectedTile == 3)
-	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = true;
-		YellowisActive = false;
-	}
-	if (selectedTile == 4)
-	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = true;
-	}
-
-	
-	if (ImGui::Button("Clear Tiles"))
-	{
-		Clear = true;
-	}
-	if(ImGui::Button("Exit"))
-	{ 
-		m_running = false;
-	}
-	
-	ImGui::End();
 }
 
 void Example::render()
@@ -215,10 +200,25 @@ void Example::render()
 	}
 	for (size_t i = 0; i < sprites.size(); i++)
 	{			
-		m_window.draw(sprites[i]);
-					
+		m_window.draw(sprites[i]);					
+	}
+}
+
+void Example::Grid() {
+
+	for (int i = 0; i < TotalCellsX; i++)
+	{
+		lineVer[i] = sf::RectangleShape(sf::Vector2f(LineThickness, CellHeight * TotalCellsY)); //Size of the cell
+		lineVer[i].setFillColor(sf::Color::White);
+		lineVer[i].setPosition(sf::Vector2f(GridOffSetX + CellWidth * i, GridOffSetY));					//Position of the cell
 	}
 
+	for (int i = 0; i < TotalCellsY; i++)
+	{
+		lineHor[i] = sf::RectangleShape(sf::Vector2f(CellWidth * TotalCellsX, LineThickness));
+		lineHor[i].setFillColor(sf::Color::White);
+		lineHor[i].setPosition(sf::Vector2f(GridOffSetX, CellHeight * i + GridOffSetY));
+	}
 }
 
 void Example::cleanup()

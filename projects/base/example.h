@@ -29,10 +29,10 @@ public:
 	virtual void update(float deltaT);
 	virtual void render();
 	virtual void cleanup();
+	virtual void Grid();
 	static Example &inst();
 		
 	sf::Sprite *m_backgroundSprite;
-	
 
 	sf::Texture* RedTile;
 	sf::Texture* BlueTile;
@@ -40,13 +40,11 @@ public:
 	sf::Texture* OrangeTile;
 	sf::Texture* YellowTile;
 
-
 	sf::RectangleShape lineHor[TotalCellsY];		
 	sf::RectangleShape lineVer[TotalCellsX];	
 
 	std::vector<sf::Sprite> sprites;
 	
-
 	bool RedisActive;
 	bool GreenisActive;
 	bool BlueisActive;
@@ -54,5 +52,12 @@ public:
 	bool OrangeisActive;
 	bool Undo;
 	bool Clear;
+	bool TilePrinted;
+	bool RedPrinted;
+	bool BluePrinted;
+	bool YellowPrinted;
+	bool GreenPrinted;
+	bool OrangePrinted;
+
 	
 };
