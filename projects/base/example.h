@@ -17,6 +17,8 @@
 #define TotalCellsX 6+ 1
 #define TotalCellsY 10 + 1
 
+using namespace std;
+
 
 
 class Example : public App
@@ -45,19 +47,12 @@ public:
 
 	std::vector<sf::Sprite> sprites;
 	
-	bool RedisActive;
-	bool GreenisActive;
-	bool BlueisActive;
-	bool YellowisActive;
-	bool OrangeisActive;
 	bool Undo;
-	bool Clear;
-	bool TilePrinted;
-	bool RedPrinted;
-	bool BluePrinted;
-	bool YellowPrinted;
-	bool GreenPrinted;
-	bool OrangePrinted;
+	bool Clear;		
+	int TileId;
+	int printedTile;
+
+	ofstream TileMap;
 
 	
 };

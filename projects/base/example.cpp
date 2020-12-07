@@ -16,12 +16,6 @@ Example &Example::inst()
 
 bool Example::start()
 {
-	RedisActive = false;
-	GreenisActive = false;
-	BlueisActive = false;
-	YellowisActive = false;
-	OrangeisActive = false;
-
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 
 	RedTile = kage::TextureManager::getTexture("data/RedTile.png");
@@ -33,8 +27,10 @@ bool Example::start()
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 	
-	Grid();
-	
+	Grid();	
+
+
+
 	return true;
 }
 
@@ -45,7 +41,10 @@ void Example::update(float deltaT)
 	float indexY;
 	int newindexX;
 	int newindexY;
-	int w = 6;
+	
+	int Map[TotalCellsY - 1][TotalCellsX - 1];
+	
+	
 	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile" };
 	static int selectedTile = 0;
 
@@ -55,135 +54,104 @@ void Example::update(float deltaT)
 	indexY = mousePosition.y / 90;
 	newindexY = (int)indexY;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
-	{
-		m_running = false;
-
-	}
-
+	sf::Sprite Tilesprites;
 	ImGui::Begin("Game Editor");
 
 	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
 
 	if (selectedTile == 0)
 	{
-		RedisActive = true;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = false;
-
+		TileId = 1;
 	}
 	if (selectedTile == 1)
 	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = true;
-		OrangeisActive = false;
-		YellowisActive = false;
+		TileId = 2;
 	}
 	if (selectedTile == 2)
 	{
-		RedisActive = false;
-		GreenisActive = true;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = false;
+		TileId = 3;
 	}
 	if (selectedTile == 3)
 	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = true;
-		YellowisActive = false;
+		TileId = 4;
 	}
 	if (selectedTile == 4)
 	{
-		RedisActive = false;
-		GreenisActive = false;
-		BlueisActive = false;
-		OrangeisActive = false;
-		YellowisActive = true;
+		TileId = 5;
 	}
-
 
 	if (ImGui::Button("Clear Tiles"))
 	{
 		Clear = true;
 	}
+
 	if (ImGui::Button("Exit"))
 	{
 		m_running = false;
 	}
 
 	ImGui::End();
-	if (Clear == true)
+
+	switch (TileId)
+	{
+	case 1:
+		Tilesprites.setTexture(*RedTile);
+		printedTile = 1;
+		break;
+	case 2:
+		Tilesprites.setTexture(*BlueTile);
+		printedTile = 2;
+		break;
+	case 3:
+		Tilesprites.setTexture(*GreenTile);
+		printedTile = 3;
+		break;
+	case 4:
+		Tilesprites.setTexture(*OrangeTile);
+		printedTile = 4;
+		break;
+	case 5:
+		Tilesprites.setTexture(*YellowTile);
+		printedTile = 5;
+		break;
+	default:
+		break;
+
+	}
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+
+		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
+		{
+			Tilesprites.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
+			sprites.push_back(Tilesprites);
+			render();
+		}
+	}
+	
+	TileMap.open("TileMap.txt");
+	for (int i = 0; i < 6; i++)
 	{	
+		TileMap << printedTile;
+		TileMap << printedTile;
+		TileMap << printedTile;
+		TileMap << printedTile;
+		TileMap << printedTile;
+		TileMap << printedTile;	
+	}			
+	TileMap.close();
+
 		
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
+	{
+		m_running = false;
+	}
+
+	if (Clear == true)
+	{
 		sprites.clear();
 		Clear = false;
 	}
-	
-	if (RedisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
-		{
-			sf::Sprite Red;
-			Red.setTexture(*RedTile);
-			Red.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
-			sprites.push_back(Red);
-			render();
-		}
-		
-	}
-	if (YellowisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
-		{
-			sf::Sprite Yellow;
-			Yellow.setTexture(*YellowTile);
-			Yellow.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
-			sprites.push_back(Yellow);
-			render();
-		}
-
-	}
-	if (OrangeisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
-		{
-			sf::Sprite Orange;
-			Orange.setTexture(*OrangeTile);
-			Orange.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
-			sprites.push_back(Orange);
-			render();
-		}
-
-	}
-	if (GreenisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {		
-
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
-		{
-			sf::Sprite Green;
-			Green.setTexture(*GreenTile);
-			Green.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
-			sprites.push_back(Green);
-			render();
-		}
-	}
-	if (BlueisActive == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
-		{
-			sf::Sprite Blue;
-			Blue.setTexture(*BlueTile);
-			Blue.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
-			sprites.push_back(Blue);
-			render();
-		}
-	}
-		
-		
 }
 
 void Example::render()

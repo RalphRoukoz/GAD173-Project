@@ -9,4 +9,6 @@ int main()
 	Example::inst().run();
 
 	return 0;
+
 }
+
