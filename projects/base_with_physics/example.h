@@ -2,7 +2,7 @@
 
 #include "app.h"
 #include "kage2dutil/physics.h"
-#include "rabbit.h"
+#include "SceneManager.h"
 
 class Example : public App
 {
@@ -15,5 +15,5 @@ public:
 	virtual void cleanup();
 	static Example &inst();
 
-	sf::Sprite *m_backgroundSprite;
+	SceneManager sceneManager;
 };

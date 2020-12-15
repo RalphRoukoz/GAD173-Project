@@ -1,26 +1,32 @@
 ﻿  example.cpp
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(51,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(54,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(126,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+  main.cpp
+  SavingAndLoading.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.h(55,30): error C3646: 'InputOutput': unknown override specifier (compiling source file SavingAndLoading.cpp)
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.h(55,30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (compiling source file SavingAndLoading.cpp)
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.h(10,13): error C2065: 'TilesArraySize': undeclared identifier (compiling source file example.cpp)
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.h(10,13): error C2065: 'TilesArraySize': undeclared identifier (compiling source file main.cpp)
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(44,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(47,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(126,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(37,28): warning C4100: 'deltaT': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(45,6): warning C4101: 'Map': unreferenced local variable
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(181,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(166,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(188,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(173,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\base_d.exe
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(28,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(32,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data

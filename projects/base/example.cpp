@@ -28,9 +28,6 @@ bool Example::start()
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 	
 	Grid();	
-
-
-
 	return true;
 }
 
@@ -40,11 +37,7 @@ void Example::update(float deltaT)
 	float indexX;
 	float indexY;
 	int newindexX;
-	int newindexY;
-	
-	int Map[TotalCellsY - 1][TotalCellsX - 1];
-	
-	
+	int newindexY;	
 	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile" };
 	static int selectedTile = 0;
 
@@ -84,7 +77,14 @@ void Example::update(float deltaT)
 	{
 		Clear = true;
 	}
-
+	if (ImGui::Button("Save"))
+	{
+		InputOutput.Save(tiles, TilesArraySize );
+	}
+	if (ImGui::Button("Load"))
+	{
+		InputOutput.Load();
+	}
 	if (ImGui::Button("Exit"))
 	{
 		m_running = false;
@@ -94,29 +94,25 @@ void Example::update(float deltaT)
 
 	switch (TileId)
 	{
+	case 0:
+		break;
 	case 1:
 		Tilesprites.setTexture(*RedTile);
-		printedTile = 1;
 		break;
 	case 2:
 		Tilesprites.setTexture(*BlueTile);
-		printedTile = 2;
 		break;
 	case 3:
 		Tilesprites.setTexture(*GreenTile);
-		printedTile = 3;
 		break;
 	case 4:
 		Tilesprites.setTexture(*OrangeTile);
-		printedTile = 4;
 		break;
 	case 5:
 		Tilesprites.setTexture(*YellowTile);
-		printedTile = 5;
 		break;
 	default:
 		break;
-
 	}
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
@@ -126,22 +122,12 @@ void Example::update(float deltaT)
 			Tilesprites.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
 			sprites.push_back(Tilesprites);
 			render();
+
+			int i = newindexX + newindexY * (TotalCellsX - 1);
+			tiles[i].id = TileId;
 		}
 	}
-	
-	TileMap.open("TileMap.txt");
-	for (int i = 0; i < 6; i++)
-	{	
-		TileMap << printedTile;
-		TileMap << printedTile;
-		TileMap << printedTile;
-		TileMap << printedTile;
-		TileMap << printedTile;
-		TileMap << printedTile;	
-	}			
-	TileMap.close();
-
-		
+			
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
 	{
 		m_running = false;
@@ -153,7 +139,6 @@ void Example::update(float deltaT)
 		Clear = false;
 	}
 }
-
 void Example::render()
 {
 	m_window.draw(*m_backgroundSprite);
@@ -171,6 +156,7 @@ void Example::render()
 		m_window.draw(sprites[i]);					
 	}
 }
+
 
 void Example::Grid() {
 

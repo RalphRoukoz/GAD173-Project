@@ -5,6 +5,9 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "Tile.h"
+#include "SavingAndLoading.h"
+
 
 #define LineThickness 2
 
@@ -17,12 +20,16 @@
 #define TotalCellsX 6+ 1
 #define TotalCellsY 10 + 1
 
+#define TilesArraySize ((TotalCellsX -1) * (TotalCellsY-1 ))
+
 using namespace std;
 
 
 
 class Example : public App
 {
+private:
+	SavingAndLoading InputOutput;
 public:
 
 	Example();
@@ -31,8 +38,9 @@ public:
 	virtual void update(float deltaT);
 	virtual void render();
 	virtual void cleanup();
-	virtual void Grid();
+	virtual void Grid();	
 	static Example &inst();
+	
 		
 	sf::Sprite *m_backgroundSprite;
 
@@ -43,16 +51,15 @@ public:
 	sf::Texture* YellowTile;
 
 	sf::RectangleShape lineHor[TotalCellsY];		
-	sf::RectangleShape lineVer[TotalCellsX];	
+	sf::RectangleShape lineVer[TotalCellsX];
+
+	Tile tiles[TilesArraySize];
 
 	std::vector<sf::Sprite> sprites;
+
+
 	
 	bool Undo;
 	bool Clear;		
 	int TileId;
-	int printedTile;
-
-	ofstream TileMap;
-
-	
 };

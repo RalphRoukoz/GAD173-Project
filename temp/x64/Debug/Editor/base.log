@@ -1,0 +1,30 @@
+﻿  example.cpp
+  main.cpp
+  SavingAndLoading.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(44,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(47,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(34,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(167,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(174,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(23,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(25,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(27,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Editor_d.exe
