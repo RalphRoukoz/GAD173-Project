@@ -9,7 +9,7 @@ private:
 	Options options;
 	StartGame game;
 	MainMenu menu;
-	int m_index = 0;
+	int m_index = 2;
 public:
 	SceneManager(sf::RenderWindow& window);
 	~SceneManager();

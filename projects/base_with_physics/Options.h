@@ -6,7 +6,7 @@ class Options
 {
 private:
 	sf::RenderWindow& m_window;
-	sf::Sprite* ship2;
+	sf::Sprite* m_backgroundSprite;
 public:
 	Options(sf::RenderWindow& window);
 	~Options();

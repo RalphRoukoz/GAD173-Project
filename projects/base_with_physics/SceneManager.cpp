@@ -1,7 +1,7 @@
 #include "SceneManager.h"
 
-SceneManager::SceneManager(sf::RenderWindow& window) : options(window),
-							game(window), menu(window)
+SceneManager::SceneManager(sf::RenderWindow& window) : menu(window, *this), options(window),
+							game(window)
 { 
 
 };
@@ -28,13 +28,13 @@ void SceneManager::Update(float deltaTime) {
 	{
 
 	case 0:
-		menu.update(deltaTime);
+		game.update(deltaTime);
 		break;
 	case 1:
 		options.update(deltaTime);
 		break;
 	case 2:
-		game.update(deltaTime);
+		menu.update(deltaTime);
 		break;
 	default:
 		break;
@@ -46,13 +46,13 @@ void SceneManager::Render() {
 	{
 
 	case 0:
-		menu.render();
+		game.render();
 		break;
 	case 1:
 		options.render();
 		break;
 	case 2:
-		game.render();
+		menu.render();
 		break;
 	default:
 		break;

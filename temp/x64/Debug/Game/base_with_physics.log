@@ -1,2 +1,14 @@
-﻿  SceneManager.cpp
+﻿  MainMenu.cpp
+  Options.cpp
+  SceneManager.cpp
+  example.cpp
+  main.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(28,11): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(41,21): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(65,12): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\Options.cpp(21,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(67,22): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(83,12): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(85,22): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\MainMenu.cpp(46,29): warning C4100: 'deltaT': unreferenced formal parameter
   base_with_physics.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Game_d.exe

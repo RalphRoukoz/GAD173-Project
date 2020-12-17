@@ -57,8 +57,6 @@ public:
 
 	std::vector<sf::Sprite> sprites;
 
-
-	
 	bool Undo;
 	bool Clear;		
 	int TileId;

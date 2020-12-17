@@ -5,6 +5,8 @@
 #include "kage2dutil/imgui.h"
 #include "kage2dutil/imgui-SFML.h"
 
+bool App::isKeyReleased = false;
+
 App::App()
 {
 }
@@ -76,6 +78,14 @@ void App::run()
 			{
 				m_window.close();
 				break;
+			}
+			if (event.type == sf::Event::KeyReleased)
+			{
+				isKeyReleased = true;
+			}
+			if (event.type == sf::Event::KeyPressed)
+			{
+				isKeyReleased = false;
 			}
 		}
 		sf::Time deltaT_sfml = m_clock.restart();
