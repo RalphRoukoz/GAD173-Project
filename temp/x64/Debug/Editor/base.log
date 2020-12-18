@@ -1,30 +1,6 @@
 ﻿  SavingAndLoading.cpp
-  example.cpp
-  main.cpp
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(23,4): warning C4456: declaration of 'i' hides previous local declaration
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(21,15): message : see declaration of 'i'
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(26,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(44,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(47,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(122,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(34,28): warning C4100: 'deltaT': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(167,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(174,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(26,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(28,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(32,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Editor_d.exe

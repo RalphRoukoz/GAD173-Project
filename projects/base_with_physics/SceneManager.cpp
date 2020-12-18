@@ -1,6 +1,6 @@
 #include "SceneManager.h"
 
-SceneManager::SceneManager(sf::RenderWindow& window) : menu(window, *this), options(window),
+SceneManager::SceneManager(sf::RenderWindow& window) : menu(window, *this), options(window,* this),
 							game(window)
 { 
 

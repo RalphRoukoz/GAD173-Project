@@ -18,6 +18,10 @@ bool Example::start()
 {
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 
+	if (!textFont.loadFromFile("./data/arcade.ttf")) {
+		std::cout << "font not found" << std::endl;
+	}
+
 	RedTile = kage::TextureManager::getTexture("data/RedTile.png");
 	BlueTile = kage::TextureManager::getTexture("data/BlueTile.png");
 	GreenTile = kage::TextureManager::getTexture("data/GreenTile.png");
@@ -27,7 +31,25 @@ bool Example::start()
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 	
-	Grid();	
+	Grid();
+
+	for (size_t i = 0; i < Text_Array_Size; i++)
+	{
+		texts[i].setFont(textFont);
+		texts[i].setCharacterSize(60);
+		texts[i].setColor(sf::Color::Black);
+	}
+
+	texts[0].setString("Red Tile");
+	texts[1].setString("Blue Tile");
+	texts[2].setString("Green Tile");
+	texts[3].setString("Orange Tile");
+	texts[4].setString("Yellow Tile");
+	texts[5].setString("Save");
+	texts[6].setString("Load");
+	texts[7].setString("Clear Tiles");
+	texts[8].setString("Exit");
+
 	return true;
 }
 
@@ -52,6 +74,10 @@ void Example::update(float deltaT)
 
 	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
 
+#pragma region SelectedTile
+
+
+
 	if (selectedTile == 0)
 	{
 		TileId = 1;
@@ -72,6 +98,11 @@ void Example::update(float deltaT)
 	{
 		TileId = 5;
 	}
+
+#pragma endregion
+
+
+
 
 	if (ImGui::Button("Clear Tiles"))
 	{
@@ -127,13 +158,14 @@ void Example::update(float deltaT)
 			tiles[i].id = TileId;
 		}
 	}
+
 			
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
 	{
 		m_running = false;
 	}
 
-	if (Clear == true)
+	if (Clear == true )
 	{
 		sprites.clear();
 		Clear = false;
