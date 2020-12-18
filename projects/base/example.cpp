@@ -18,7 +18,7 @@ bool Example::start()
 {
 #pragma region LoadingSpritesAndFonts
 
-	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
+	m_backgroundSprite = kage::TextureManager::getSprite("data/retro.jpg");
 
 	if (!textFont.loadFromFile("./data/arcade.ttf")) {
 		std::cout << "font not found" << std::endl;
@@ -114,12 +114,12 @@ void Example::update(float deltaT)
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 	{
-		InputOutput.Save(tiles, TilesArraySize);
+		InputOutput.Save(tiles, TotalCellsY, (TotalCellsY));
 		ActiveTile = "Map Saved";
 		text.setString(ActiveTile);
 		isKeyReleasedPreviously = false;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && isKeyReleasedPreviously)
 	{
 		InputOutput.Load();
 		ActiveTile = "Map Loaded";

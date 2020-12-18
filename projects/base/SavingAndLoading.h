@@ -3,12 +3,11 @@
 #include "app.h"
 #include <fstream>
 
-#define numberOfTilePerCol 4;
 class SavingAndLoading
 {
 private:
 
 public:
-	 void Save(Tile* tiles, int length);
+	 void Save(Tile* tiles, int lengthX, int lengthY);
 	 void Load();
 };

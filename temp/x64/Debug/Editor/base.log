@@ -1,9 +1,26 @@
-﻿  SavingAndLoading.cpp
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,46): warning C4100: 'length': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(26,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(28,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(32,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(34,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(36,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  example.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(43,6): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(66,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(69,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(189,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(189,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(54,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(229,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(236,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Editor_d.exe
