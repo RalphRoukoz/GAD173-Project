@@ -31,11 +31,18 @@ void SavingAndLoading::Load() {
 			std::string ss3 = line.substr(ic2 + 1, ic3 - ic2 - 1);
 			int ic4 = line.find(',', ic3 + 1);
 			std::string ss4 = line.substr(ic3 + 1, ic4 - ic3 - 1);
-			i++;
+			int ic5 = line.find(',', ic4 + 1);
+			std::string ss5 = line.substr(ic4 + 1, ic5 - ic4 - 1);
+			int ic6 = line.find(',', ic5 + 1);
+			std::string ss6 = line.substr(ic5 + 1, ic6 - ic5 - 1);
 			std::cout << ss1 << std::endl;
 			std::cout << ss2 << std::endl;
 			std::cout << ss3 << std::endl;
 			std::cout << ss4 << std::endl;
+			std::cout << ss5 << std::endl;
+			std::cout << ss6 << std::endl;
+			i++;
+			
 		}
 				
 

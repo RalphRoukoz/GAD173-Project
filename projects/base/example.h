@@ -10,8 +10,8 @@
 
 #define Text_Array_Size 9
 
-#define Local_Text_Offset_Y 200
-#define Global_Text_Offset_Y 200
+#define Local_Text_Offset_Y 100
+#define Global_Text_Offset_Y 100
 
 #define LineThickness 2
 
@@ -19,10 +19,10 @@
 #define CellWidth 270
 
 #define GridOffSetX 0 
-#define GridOffSetY 0
+#define GridOffSetY 90
 
-#define TotalCellsX 6+ 1
-#define TotalCellsY 10 + 1
+#define TotalCellsX 7+ 1
+#define TotalCellsY 9 + 1
 
 #define TilesArraySize ((TotalCellsX -1) * (TotalCellsY-1 ))
 
@@ -45,13 +45,16 @@ private:
 	sf::RectangleShape lineVer[TotalCellsX];
 
 	sf::Font textFont;
-	sf::Text texts[Text_Array_Size];
+	sf::Text text;
 
 	std::vector<sf::Sprite> sprites;
 
 	Tile tiles[TilesArraySize];
 
+	bool isKeyReleasedPreviously;
 	bool Clear;
+
+	string ActiveTile = "No Tile Selected";
 
 	int TileId;
 public:

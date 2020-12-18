@@ -1,6 +1,9 @@
 ﻿  SavingAndLoading.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,46): warning C4100: 'length': unreferenced formal parameter
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(26,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(28,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(32,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(34,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(36,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Editor_d.exe

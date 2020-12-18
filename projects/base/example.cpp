@@ -16,6 +16,8 @@ Example &Example::inst()
 
 bool Example::start()
 {
+#pragma region LoadingSpritesAndFonts
+
 	m_backgroundSprite = kage::TextureManager::getSprite("data/sky.jpg");
 
 	if (!textFont.loadFromFile("./data/arcade.ttf")) {
@@ -30,98 +32,128 @@ bool Example::start()
 
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
+
+#pragma endregion
+
+#pragma region SettingUpTexts
+
 	
+	text.setFont(textFont);
+	text.setCharacterSize(30);
+	text.setColor(sf::Color::White);	
+	text.setString(ActiveTile);
+	text.setPosition(sf::Vector2f(m_window.getSize().x / 2  - text.getGlobalBounds().width / 2,
+		(m_window.getSize().y / 2 -500 - text.getGlobalBounds().height / 2) +1));
+#pragma endregion
+
 	Grid();
-
-	for (size_t i = 0; i < Text_Array_Size; i++)
-	{
-		texts[i].setFont(textFont);
-		texts[i].setCharacterSize(60);
-		texts[i].setColor(sf::Color::Black);
-	}
-
-	texts[0].setString("Red Tile");
-	texts[1].setString("Blue Tile");
-	texts[2].setString("Green Tile");
-	texts[3].setString("Orange Tile");
-	texts[4].setString("Yellow Tile");
-	texts[5].setString("Save");
-	texts[6].setString("Load");
-	texts[7].setString("Clear Tiles");
-	texts[8].setString("Exit");
 
 	return true;
 }
 
 void Example::update(float deltaT)
 {	
-	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);	
+#pragma region CheckingMousePositionToAddTilesOnGrid
+
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
 	float indexX;
 	float indexY;
 	int newindexX;
-	int newindexY;	
+	int newindexY;
 	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile" };
 	static int selectedTile = 0;
 
 	indexX = mousePosition.x / 270;
 	newindexX = (int)indexX;
 
-	indexY = mousePosition.y / 90;
+	indexY =  mousePosition.y / 90;
 	newindexY = (int)indexY;
 
 	sf::Sprite Tilesprites;
-	ImGui::Begin("Game Editor");
-
-	ImGui::ListBox("Choose Tile", &selectedTile, Tiles, IM_ARRAYSIZE(Tiles));
-
-#pragma region SelectedTile
-
-
-
-	if (selectedTile == 0)
-	{
-		TileId = 1;
-	}
-	if (selectedTile == 1)
-	{
-		TileId = 2;
-	}
-	if (selectedTile == 2)
-	{
-		TileId = 3;
-	}
-	if (selectedTile == 3)
-	{
-		TileId = 4;
-	}
-	if (selectedTile == 4)
-	{
-		TileId = 5;
-	}
 
 #pragma endregion
 
+#pragma region InputButtons
 
-
-
-	if (ImGui::Button("Clear Tiles"))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) && isKeyReleasedPreviously)
 	{
-		Clear = true;
+		TileId = 1;
+		ActiveTile = "RedTile is Active";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
 	}
-	if (ImGui::Button("Save"))
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && isKeyReleasedPreviously)
 	{
-		InputOutput.Save(tiles, TilesArraySize );
+		TileId = 2;
+		ActiveTile = "Blue is Active";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
 	}
-	if (ImGui::Button("Load"))
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) && isKeyReleasedPreviously)
+	{
+		TileId = 3;
+		ActiveTile = "Green is Active";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) && isKeyReleasedPreviously)
+	{
+		TileId = 4;
+		ActiveTile = "Orange is Active";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) && isKeyReleasedPreviously)
+	{
+		TileId = 5;
+		ActiveTile = "Yellow is Active";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
+	{
+		InputOutput.Save(tiles, TilesArraySize);
+		ActiveTile = "Map Saved";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 	{
 		InputOutput.Load();
+		ActiveTile = "Map Loaded";
+		text.setString(ActiveTile);
+		isKeyReleasedPreviously = false;
 	}
-	if (ImGui::Button("Exit"))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete) )
+	{
+		ActiveTile = "Cleared Tiles";
+		text.setString(ActiveTile);
+		Clear = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
 	{
 		m_running = false;
 	}
 
-	ImGui::End();
+	if (App::isKeyReleased)
+	{
+		isKeyReleasedPreviously = true;
+	}
+	else
+	{
+		isKeyReleasedPreviously = false;
+	}
+	if (Clear == true)
+	{
+		sprites.clear();
+		Clear = false;
+	}
+
+#pragma endregion
+		
+#pragma region SwitchingCasesForTileColors
 
 	switch (TileId)
 	{
@@ -146,9 +178,13 @@ void Example::update(float deltaT)
 		break;
 	}
 
+#pragma endregion
+	
+#pragma region PrintingTilesOnceClickingWithMouse
+
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY < (TotalCellsY - 1))
+		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY  < (TotalCellsY))
 		{
 			Tilesprites.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
 			sprites.push_back(Tilesprites);
@@ -158,19 +194,10 @@ void Example::update(float deltaT)
 			tiles[i].id = TileId;
 		}
 	}
-
+#pragma endregion
 			
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && m_window.hasFocus())
-	{
-		m_running = false;
-	}
+}	
 
-	if (Clear == true )
-	{
-		sprites.clear();
-		Clear = false;
-	}
-}
 void Example::render()
 {
 	m_window.draw(*m_backgroundSprite);
@@ -187,8 +214,11 @@ void Example::render()
 	{			
 		m_window.draw(sprites[i]);					
 	}
+	for (size_t i = 0; i < Text_Array_Size; i++)
+	{
+		m_window.draw(text);
+	}
 }
-
 
 void Example::Grid() {
 
