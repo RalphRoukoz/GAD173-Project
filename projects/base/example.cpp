@@ -184,7 +184,7 @@ void Example::update(float deltaT)
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
-		if (newindexX >= 0 && newindexY >= 0 && newindexX < (TotalCellsX - 1) && newindexY  < (TotalCellsY))
+		if (newindexX >= 0 && newindexY >= 1 && newindexX < (TotalCellsX - 1) && newindexY  < (TotalCellsY))
 		{
 			Tilesprites.setPosition(sf::Vector2f(newindexX * CellWidth, newindexY * CellHeight));
 			sprites.push_back(Tilesprites);
