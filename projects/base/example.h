@@ -34,6 +34,7 @@ private:
 	SavingAndLoading InputOutput;
 
 	sf::Sprite* m_backgroundSprite;
+	sf::Sprite Tilesprites;
 
 	sf::Texture* RedTile;
 	sf::Texture* BlueTile;
@@ -65,6 +66,7 @@ public:
 	virtual void update(float deltaT);
 	virtual void render();
 	virtual void cleanup();
+
 	virtual void Grid();	
 	static Example &inst();
 		

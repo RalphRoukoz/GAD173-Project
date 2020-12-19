@@ -3,11 +3,13 @@
 #include "app.h"
 #include <fstream>
 
+
 class SavingAndLoading
 {
-private:
-
-public:
-	 void Save(Tile* tiles, int lengthX, int lengthY);
-	 void Load();
+	private:
+		std::string ss;
+		int Newss;
+	public:
+	 void Save(Tile* tiles, int length);
+	 void Load(Tile* tiles, int length, std::vector<sf::Sprite> Sprites, sf::Sprite TileSprites, sf::Texture* RedTile);
 };

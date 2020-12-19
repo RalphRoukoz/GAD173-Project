@@ -1,29 +1,30 @@
-﻿  SavingAndLoading.cpp
-  example.cpp
+﻿  example.cpp
   main.cpp
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,59): warning C4100: 'lengthY': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,46): warning C4100: 'lengthX': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  SavingAndLoading.cpp
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(31,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(18,124): warning C4100: 'RedTile': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(18,46): warning C4100: 'length': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(18,35): warning C4100: 'tiles': unreferenced formal parameter
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(43,6): warning C4996: 'sf::Text::setColor': was declared deprecated
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(64,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(67,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(187,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(65,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(68,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(190,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(187,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(190,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(54,28): warning C4100: 'deltaT': unreferenced formal parameter
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(227,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(55,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(230,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(234,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(237,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

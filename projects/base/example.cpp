@@ -43,7 +43,8 @@ bool Example::start()
 	text.setColor(sf::Color::White);	
 	text.setString(ActiveTile);
 	text.setPosition(sf::Vector2f(m_window.getSize().x / 2  - text.getGlobalBounds().width / 2,
-		(m_window.getSize().y / 2 -500 - text.getGlobalBounds().height / 2) +1));
+					(m_window.getSize().y / 2 -500 - text.getGlobalBounds().height / 2) +1));
+
 #pragma endregion
 
 	Grid();
@@ -67,7 +68,7 @@ void Example::update(float deltaT)
 	indexY =  mousePosition.y / 90;
 	newindexY = (int)indexY;
 
-	sf::Sprite Tilesprites;
+	
 
 #pragma endregion
 
@@ -112,14 +113,16 @@ void Example::update(float deltaT)
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 	{
-		InputOutput.Save(tiles, TotalCellsY, (TotalCellsY));
+		InputOutput.Save(tiles, TilesArraySize);
 		ActiveTile = "Map Saved";
 		text.setString(ActiveTile);
 		isKeyReleasedPreviously = false;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && isKeyReleasedPreviously)
 	{
-		InputOutput.Load();
+		InputOutput.Load(tiles, TilesArraySize, sprites, Tilesprites, RedTile);
+
+		render();
 		ActiveTile = "Map Loaded";
 		text.setString(ActiveTile);
 		isKeyReleasedPreviously = false;
@@ -194,7 +197,7 @@ void Example::update(float deltaT)
 	}
 #pragma endregion
 			
-}	
+}
 
 void Example::render()
 {
@@ -222,9 +225,9 @@ void Example::Grid() {
 
 	for (int i = 0; i < TotalCellsX; i++)
 	{
-		lineVer[i] = sf::RectangleShape(sf::Vector2f(LineThickness, CellHeight * TotalCellsY)); //Size of the cell
+		lineVer[i] = sf::RectangleShape(sf::Vector2f(LineThickness, CellHeight * TotalCellsY)); 
 		lineVer[i].setFillColor(sf::Color::White);
-		lineVer[i].setPosition(sf::Vector2f(GridOffSetX + CellWidth * i, GridOffSetY));					//Position of the cell
+		lineVer[i].setPosition(sf::Vector2f(GridOffSetX + CellWidth * i, GridOffSetY));					
 	}
 
 	for (int i = 0; i < TotalCellsY; i++)

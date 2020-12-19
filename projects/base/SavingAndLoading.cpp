@@ -2,12 +2,12 @@
 #include "SavingAndLoading.h"
 
 
-void SavingAndLoading::Save(Tile* tiles, int lengthX, int lengthY)
+void SavingAndLoading::Save(Tile* tiles, int length)
 {
 	std::fstream MapLayout;
 	MapLayout.open("Map.data");
 
-		for (size_t i = 0; i < 70; i++)
+		for (size_t i = 0; i < length; i++)
 		{
 			MapLayout << tiles[i].id << ", ";
 
@@ -15,7 +15,8 @@ void SavingAndLoading::Save(Tile* tiles, int lengthX, int lengthY)
 	MapLayout.close();
 }
 
-void SavingAndLoading::Load() {
+void SavingAndLoading::Load(Tile* tiles, int length, std::vector<sf::Sprite> Sprites, sf::Sprite TileSprites, sf::Texture* RedTile)
+{
 
 	std::string line;
 	std::ifstream MapLayout("Map.data");
@@ -25,18 +26,20 @@ void SavingAndLoading::Load() {
 		int ic = 0;
 		std::getline(MapLayout, line);
 
-		for (size_t i = 0; i <70; i++)
+		while (std::getline(MapLayout, line))
 		{
 			ic = line.find(',', ic + 1);
-			std::string ss = line.substr(ic - 1, (line.find(',', ic + 1)) - ic - 2);
-			std::cout << ss << std::endl;
-		}	
-
+			ss = line.substr(ic - 1, (line.find(',', ic + 1)) - ic - 2);
+			Newss = stoi(ss);
+			std::cout << std::stoi(ss) << std::endl;		
+		}
 		MapLayout.close();
-	}	
-
+	}
+	
 	else
 	{
 		std::cout << "Unable to locate file";
-	}			
+	}	
+
 };
+
