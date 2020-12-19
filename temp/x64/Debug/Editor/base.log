@@ -1,5 +1,31 @@
 ﻿  SavingAndLoading.cpp
+  example.cpp
+  main.cpp
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,59): warning C4100: 'lengthY': unreferenced formal parameter
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(5,46): warning C4100: 'lengthX': unreferenced formal parameter
 C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\SavingAndLoading.cpp(30,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(43,6): warning C4996: 'sf::Text::setColor': was declared deprecated
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(64,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(67,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(187,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(187,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(54,28): warning C4100: 'deltaT': unreferenced formal parameter
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(227,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base\example.cpp(234,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   base.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Editor_d.exe

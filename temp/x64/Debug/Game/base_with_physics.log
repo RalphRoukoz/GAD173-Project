@@ -1,3 +1,2 @@
-﻿  app.cpp
-C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\projects\base_with_physics\app.cpp(54,24): warning C4100: 'deltaT': unreferenced formal parameter
+﻿  example.cpp
   base_with_physics.vcxproj -> C:\Users\PC\Desktop\GAD173-Project\GAD173-Project\bin\Game_d.exe
