@@ -60,8 +60,6 @@ void Example::update(float deltaT)
 	float indexY;
 	int newindexX;
 	int newindexY;
-	static const char* Tiles[]{ "Red Tile","Blue Tile","GreenTile","OrangeTile","YellowTile" };
-	static int selectedTile = 0;
 
 	indexX = mousePosition.x / 270;
 	newindexX = (int)indexX;

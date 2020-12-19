@@ -13,10 +13,11 @@ Options::~Options() {
 
 bool Options::start() {
 
-	
 	m_backgroundSprite = kage::TextureManager::getSprite("data/retro.png");
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
+
+#pragma region TextSetup
 
 	if (!textFont.loadFromFile("./data/arcade.ttf")) {
 		std::cout << "font not found" << std::endl;
@@ -39,10 +40,15 @@ bool Options::start() {
 			+ (i * Local_Text_Offset_Y) + Global_Text_Offset_Y));
 	}
 	texts[selectedItem].setColor(sf::Color::White);
+
+#pragma endregion
+
 	return true;
 }
 
 void Options::update(float deltaT) {
+
+#pragma region InputSystem
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && isKeyReleasedPreviously && selectedItem == 2)
 	{
@@ -94,17 +100,16 @@ void Options::update(float deltaT) {
 		isKeyReleasedPreviously = false;
 	}
 
+#pragma endregion
+
 }
 
 void Options::render() {
+
 	m_window.draw(*m_backgroundSprite);
 
 	for (size_t i = 0; i < Text_Array_Size; i++)
 	{
 		m_window.draw(texts[i]);
 	}
-}
-
-void Options::cleanup() {
-
 }

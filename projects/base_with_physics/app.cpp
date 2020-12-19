@@ -1,6 +1,7 @@
 #include "app.h"
 
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include "kage2dutil/system.h"
 #include "kage2dutil/imgui.h"
 #include "kage2dutil/imgui-SFML.h"
@@ -33,12 +34,13 @@ bool App::init()
 		return false;
 	}
 	ImGui::CreateContext();
-	ImGui::SFML::Init(m_window);
+	ImGui::SFML::Init(m_window);	
 	return true;
 }
 
 bool App::start()
 {
+	
 	return true;
 }
 
@@ -55,6 +57,7 @@ void App::render()
 void App::run()
 {
 	m_running = true;
+
 
 	if (!init())
 	{

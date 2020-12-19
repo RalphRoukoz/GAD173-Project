@@ -104,6 +104,7 @@
     <ClInclude Include="Options.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StartGame.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />

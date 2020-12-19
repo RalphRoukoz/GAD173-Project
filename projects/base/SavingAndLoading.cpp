@@ -7,14 +7,11 @@ void SavingAndLoading::Save(Tile* tiles, int lengthX, int lengthY)
 	std::fstream MapLayout;
 	MapLayout.open("Map.data");
 
-	for (size_t i = 0; i < 10; i++)
-	{
-		for (size_t i = 0; i < 8; i++)
+		for (size_t i = 0; i < 70; i++)
 		{
 			MapLayout << tiles[i].id << ", ";
+
 		}
-		MapLayout << "\n";
-	}
 	MapLayout.close();
 }
 
@@ -28,7 +25,7 @@ void SavingAndLoading::Load() {
 		int ic = 0;
 		std::getline(MapLayout, line);
 
-		for (size_t i = 0; i < 5; i++)
+		for (size_t i = 0; i <70; i++)
 		{
 			ic = line.find(',', ic + 1);
 			std::string ss = line.substr(ic - 1, (line.find(',', ic + 1)) - ic - 2);

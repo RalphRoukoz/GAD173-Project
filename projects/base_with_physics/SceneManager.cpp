@@ -26,7 +26,6 @@ void SceneManager::Update(float deltaTime) {
 
 	switch (m_index)
 	{
-
 	case 0:
 		game.update(deltaTime);
 		break;
@@ -44,7 +43,6 @@ void SceneManager::Render() {
 
 	switch (m_index)
 	{
-
 	case 0:
 		game.render();
 		break;

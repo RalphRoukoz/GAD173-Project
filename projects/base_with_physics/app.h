@@ -22,6 +22,7 @@ protected:
 	sf::RenderWindow m_window;
 	sf::Clock m_clock;
 	sf::Font m_font;
+
 	bool m_running;
 
 public:

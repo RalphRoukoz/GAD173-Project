@@ -16,6 +16,7 @@ bool MainMenu::start() {
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
+#pragma region TextSetup
 
 	if (!textFont.loadFromFile("./data/arcade.ttf")) {
 		std::cout << "font not found" << std::endl;
@@ -35,18 +36,22 @@ bool MainMenu::start() {
 	for (size_t i = 0; i < Text_Array_Size; i++)
 	{
 		texts[i].setPosition(sf::Vector2f(m_window.getSize().x / 2 - texts[i].getGlobalBounds().width / 2,
-										 (m_window.getSize().y / 2 -400 - texts[i].getGlobalBounds().height / 2)
-										  + (i * Local_Text_Offset_Y) + Global_Text_Offset_Y));
+			(m_window.getSize().y / 2 - 400 - texts[i].getGlobalBounds().height / 2)
+			+ (i * Local_Text_Offset_Y) + Global_Text_Offset_Y));
 	}
 	texts[selectedItem].setColor(sf::Color::White);
+
+#pragma endregion
+
+	
 	return true;
 }
 
 
 void MainMenu::update(float deltaT)
 {
-	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
-	sf::Vector2f newMousePos = sf::Vector2f(mousePosition);
+
+#pragma region InputSystem
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && isKeyReleasedPreviously && selectedItem <= 1)
 	{
@@ -54,8 +59,8 @@ void MainMenu::update(float deltaT)
 		isKeyReleasedPreviously = false;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && isKeyReleasedPreviously && selectedItem == 2) {
-		App::m_running = false;
-	}	
+	App::m_running = false;
+	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && isKeyReleasedPreviously)
 	{
 		if (selectedItem < Text_Array_Size - 1) {
@@ -88,7 +93,7 @@ void MainMenu::update(float deltaT)
 			texts[i].setColor(sf::Color::Black);
 		}
 		texts[selectedItem].setColor(sf::Color::White);
-		
+
 		isKeyReleasedPreviously = false;
 	}
 
@@ -100,6 +105,10 @@ void MainMenu::update(float deltaT)
 	{
 		isKeyReleasedPreviously = false;
 	}
+
+#pragma endregion
+
+	
 }
 
 
